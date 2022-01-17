@@ -12,7 +12,7 @@ services:
       - "30303:30303"
     volumes:
       - ./volumes/besu:/opt/besu/data
-      - ./config/besu/:/etc/besu
+      - ./config/${EXEC_CLIENT_NETWORK}/besu/:/etc/besu
 
   teku:
     environment:
@@ -25,7 +25,7 @@ services:
       - besu_node
     volumes:
       - ./volumes/teku:/opt/teku/data
-      - ./config/teku/:/etc/teku
+      - ./config/${CONSENSUS_CLIENT_NETWORK}/teku/:/etc/teku
     ports:
       # Map the p2p port(9000) and REST API port(5051)
       - "9000:9000"

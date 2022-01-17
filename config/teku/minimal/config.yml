@@ -6,7 +6,7 @@ p2p-enabled: true
 p2p-port: 9000
 
 # validators
-validator-keys: "/etc/teku/validator_keys:/etc/teku/passwords"
+validator-keys: "/etc/keys/validator_keys:/etc/keys/passwords"
 validators-graffiti: "Teku validator"
 
 # Eth 1
