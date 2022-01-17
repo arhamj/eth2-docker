@@ -1,0 +1,7 @@
+.idea
+*.iml
+config/teku/validator_keys/*.json*
+config/teku/passwords/*.txt
+.DS_Store
+volumes/besu
+volumes/teku

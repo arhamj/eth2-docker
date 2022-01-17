@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  besu:
+    image: hyperledger/besu:20.10
+    command:
+      - "--config-file=/etc/besu/config.toml"
+    container_name: besu
+    ports:
+      # Map the p2p port(30303) and RPC HTTP port(8545)
+      - "8545:8545"
+      - "30303:30303"
+    volumes:
+      - ./volumes/besu:/opt/besu/data
+      - ./config/besu/:/etc/besu
+
+  teku:
+    environment:
+      - "JAVA_OPTS=-Xmx4g"
+    image: consensys/teku:latest
+    container_name: teku
+    command:
+      - "--config-file=/etc/teku/config.yml"
+    depends_on:
+      - besu_node
+    volumes:
+      - ./volumes/teku:/opt/teku/data
+      - ./config/teku/:/etc/teku
+    ports:
+      # Map the p2p port(9000) and REST API port(5051)
+      - "9000:9000"
+      - "5051:5051"
+      - "8008:8008"

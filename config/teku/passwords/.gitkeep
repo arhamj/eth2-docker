@@ -1,0 +1,2 @@
+Store the following files here:
+1. keystore-m-{timestamp}.txt - containing the password to decrypt the keystore data

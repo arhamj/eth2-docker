@@ -1,0 +1,3 @@
+Store the following files here:
+1. deposit_data-{timestamp_unix}.json
+2. keystore-m-{timestamp}.json
